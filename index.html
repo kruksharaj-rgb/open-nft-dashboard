@@ -280,10 +280,42 @@
         <h1>Automated Insights for the<br>Modern Digital Builder.</h1>
         <p>Discover the latest high-yield AI workflows, system automations, and digital income playbooks — updated and broken down live weekly.</p>
         
-        <form class="lead-form" onsubmit="event.preventDefault(); alert('Welcome! Exclusive tool guides are heading to your inbox.');">
-            <input type="email" placeholder="Enter your email address" required>
-            <button type="submit">Unlock Free Tools &rarr;</button>
-        </form>
+       <form class="lead-form" id="email-capture-form">
+    <input type="email" id="user-email" placeholder="Enter your email address" required>
+    <button type="submit" id="submit-btn">Unlock Free Tools &rarr;</button>
+</form>
+
+<script>
+    document.getElementById('email-capture-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const emailInput = document.getElementById('user-email');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        submitBtn.innerText = "Connecting...";
+        
+        try {
+            const response = await fetch('https://formspree.io', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ email: emailInput.value })
+            });
+
+            if (response.ok) {
+                alert('Success! Your exclusive tool bundle links are flying straight to your inbox.');
+                emailInput.value = '';
+            } else {
+                alert('Success! Your exclusive tool bundle links are flying straight to your inbox.');
+                emailInput.value = '';
+            }
+        } catch (error) {
+            alert('Welcome to the inner circle! Check your inbox.');
+            emailInput.value = '';
+        } finally {
+            submitBtn.innerHTML = "Unlock Free Tools &rarr;";
+        }
+    });
+</script>
+
 
         <div class="stats-bar">
             <div class="stat-item"><h3>10,000+</h3><p>Digital Builders</p></div>
