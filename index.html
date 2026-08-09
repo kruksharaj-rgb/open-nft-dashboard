@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AR Enterprises - High-Conversion Automation Platform</title>
-    <!-- Import Modern Space Grotesk Typography Font -->
+    <!-- Optimized Google Fonts Integration -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
 
     <style>
         /* Core Dark Mode Variable Themes */
@@ -43,7 +43,7 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
-            perspective: 1000px; /* Activates global 3D space depth */
+            perspective: 1000px;
         }
 
         /* 3D Animated Branding Container */
@@ -70,7 +70,7 @@
             justify-content: center;
         }
 
-        /* Duplicating layers to build physical depth (3D Extrusion Effect) */
+        /* Duplicating layers for 3D depth */
         .logo-mark-3d::before {
             content: "AR";
             position: absolute;
@@ -98,8 +98,8 @@
             width: 32px;
             height: 12px;
             background: linear-gradient(135deg, #2563EB, #3B82F6);
-            transform: translateZ(3px) rotate(-18deg); /* Pushes the slash forward in 3D space */
-            clip-path: polygon(0% 100%, 100% 0%, 85% 100%, 20% 100%); /* Yields the authentic sharp vector cut */
+            transform: translateZ(3px) rotate(-18deg);
+            clip-path: polygon(0% 100%, 100% 0%, 85% 100%, 20% 100%);
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
         }
 
@@ -123,15 +123,9 @@
 
         /* 3D Cinematic Animation Timeline */
         @keyframes floating3D {
-            0% {
-                transform: translateY(0px) rotateY(-10deg) rotateX(5deg);
-            }
-            50% {
-                transform: translateY(-6px) rotateY(15deg) rotateX(-5deg);
-            }
-            100% {
-                transform: translateY(0px) rotateY(-10deg) rotateX(5deg);
-            }
+            0% { transform: translateY(0px) rotateY(-10deg) rotateX(5deg); }
+            50% { transform: translateY(-6px) rotateY(15deg) rotateX(-5deg); }
+            100% { transform: translateY(0px) rotateY(-10deg) rotateX(5deg); }
         }
 
         nav a {
@@ -161,9 +155,9 @@
             font-weight: 600;
             transition: background 0.2s;
         }
-        .cta-nav:hover { background-color: var(--accent-hover); }
+        .cta-nav:hover { background: var(--accent-hover); }
 
-        /* Center Stage Main Hero Segment Layout */
+        /* Main Hero Segment Layout */
         .hero {
             text-align: center;
             max-width: 900px;
@@ -180,11 +174,6 @@
             background: linear-gradient(90deg, #3B82F6, #9333EA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glow 3s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(59,130,246,0.6); }
-            to { text-shadow: 0 0 20px rgba(147,51,234,0.8); }
         }
 
         .hero p {
@@ -226,16 +215,15 @@
             cursor: pointer;
             font-family: inherit;
             font-size: 1.05rem;
-            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            transition: all 0.2s;
             box-shadow: 0 4px 12px rgba(59,130,246,0.4);
         }
         .lead-form button:hover {
-            background-color: var(--accent-hover);
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(59,130,246,0.6);
         }
 
-        /* Social Trust Statistics Bar Layout */
+        /* Statistics Bar Layout */
         .stats-bar {
             display: flex;
             justify-content: center;
@@ -246,7 +234,7 @@
             font-size: 2.25rem;
             font-weight: 700;
             color: white;
-            transition: transform 0.2s, color 0.2s;
+            transition: all 0.2s;
         }
         .stat-item:hover h3 {
             transform: scale(1.1);
@@ -254,7 +242,7 @@
         }
         .stat-item p { color: var(--text-secondary); font-size: 1rem; margin-top: 4px; }
 
-        /* Premium Split Structure Content Hub Grid */
+        /* Split Layout Core Grid System */
         .main-platform-grid {
             max-width: 1300px;
             margin: 0 auto;
@@ -277,13 +265,13 @@
 
         .articles-stack { display: flex; flex-direction: column; gap: 32px; }
 
-        /* Modern Premium Tutorial Post Card */
+        /* Tutorial Card Layouts */
         .article-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 40px;
-            transition: border-color 0.2s, transform 0.2s;
+            transition: all 0.2s;
             margin-bottom: 24px;
         }
         .article-card:hover { border-color: var(--accent-blue); transform: translateY(-2px); }
@@ -301,5 +289,29 @@
         .article-card h2 { font-size: 1.85rem; line-height: 1.3; margin-bottom: 16px; font-weight: 700; }
         .article-card p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 28px; }
 
-        /* Fixed High-Conversion Sidebar System Widget Panel */
+        /* Sidebar Widgets Panels */
         .sidebar-panel { width: 360px; flex-shrink: 0; }
+        .sidebar-widget {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px;
+            position: sticky;
+            top: 40px;
+        }
+
+        .widget-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .tool-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
